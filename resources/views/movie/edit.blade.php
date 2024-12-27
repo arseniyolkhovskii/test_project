@@ -46,7 +46,7 @@
             </div>
             <input  type="file" name="poster_image" id="poster">
         </div>
-        <button class="add-movie-btn" type="submit">Обновить</button>
+        <button  class="add-movie-btn" type="submit">Обновить</button>
     </form>
     </div>
 @endsection

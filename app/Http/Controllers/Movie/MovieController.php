@@ -62,7 +62,7 @@ class MovieController extends Controller
             $movie = Movie::create($data);
             $movie->genres()->attach($genreIds);
 
-        return redirect()->route('movies.index');
+        return redirect()->route('movies.index')->with('message', 'Фильм добавлен!');
     }
     public function update(UpdateRequest $request, Movie $movie)
     {
@@ -87,7 +87,7 @@ class MovieController extends Controller
             $movie->update($data);
             $movie->genres()->sync($genreIds);
 
-        return redirect()->route('movies.index');
+        return redirect()->back()->with('message', 'Фильм обновлен!');
     }
     public function publishMovie($id)
     {

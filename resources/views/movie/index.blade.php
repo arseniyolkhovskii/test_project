@@ -10,6 +10,11 @@
             <button type="submit" class="add-movie-btn ml-2">Поиск</button>
         </form>
     </div>
+    @if(session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="container">
         <table>
             <thead>

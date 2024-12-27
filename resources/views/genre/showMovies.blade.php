@@ -5,12 +5,14 @@
         <a href="{{ route('movies.create') }}" class="add-movie-btn">Добавить фильм</a>
         <a style="margin-left: 20px" href="{{ route('movies.index') }}" class="add-movie-btn">Список фильмов</a>
         <a style="margin-left: 20px" href="{{ route('genres.index') }}" class="add-movie-btn">Список жанров</a>
-        <form action="{{ route('search') }}" method="GET" style="display: inline-block; margin-left: 15px;">
+
+        <form action="{{ route('search') }}" style="display: inline-block; margin-left: 15px;">
             <input type="text" name="id" placeholder="Введите ID" class="border p-2 rounded" required>
             <button type="submit" class="add-movie-btn ml-2">Поиск</button>
         </form>
     </div>
     <div class="container">
+        @if($genreMovies->isNotEmpty())
         <table>
             <thead>
             <tr>
@@ -59,6 +61,9 @@
             @endforeach
             </tbody>
         </table>
+        @else
+            <div style="font-size: 25px">Фильмы с данным жанром не найдены</div>
+        @endif
         <div class="mt-4 d-flex justify-content-center">
             {{ $genreMovies->links() }}
         </div>

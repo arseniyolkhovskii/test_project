@@ -10,11 +10,6 @@
             <input type="text" name="id" placeholder="Введите ID" class="border p-2 rounded" required>
             <button type="submit" class="add-movie-btn ml-2">Поиск</button>
         </form>
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
     </div>
     <form style="margin-top: 30px; margin-left: 50px" action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
